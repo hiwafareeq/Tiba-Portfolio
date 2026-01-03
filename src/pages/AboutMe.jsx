@@ -1,12 +1,13 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import useTypewriter from "../hooks/useTypewriter.jsx";
 import aboutMeTools from "../assets/images/aboutMeTools.svg";
 
 function AboutMe() {
   const sectionRef = useRef(null);
+  const toolsRef = useRef(null);
 
-  // 👇 Trigger typing only when section enters viewport
+  // Trigger typing only when section enters viewport
   const isInView = useInView(sectionRef, {
     once: true,
     margin: "-100px",
@@ -24,10 +25,54 @@ function AboutMe() {
     first.isFinished
   );
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let offsetX = 0;
+    let isActive = false;
+
+    const onScroll = () => {
+      if (!isActive || !toolsRef.current) return;
+
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+
+      // Move LEFT on scroll down
+      offsetX -= delta * 0.4;
+
+      toolsRef.current.style.transform = `translateX(${offsetX}px)`;
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          lastScrollY = window.scrollY;
+          isActive = true;
+        } else {
+          isActive = false;
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div
+    <section
       ref={sectionRef}
-      className="text-center pt-20 mx-10 text-white bg-black"
+      className="text-center pt-20 mx-10 text-white bg-black overflow-hidden"
     >
       <p className="text-2xl max-w-[70vw] mx-auto mt-10 min-h-[5rem]">
         {first.text}
@@ -37,12 +82,21 @@ function AboutMe() {
         {second.text}
       </p>
 
-      <img
-        src={aboutMeTools}
-        alt="aboutMeTools"
-        className="mx-auto py-20 w-3/4"
-      />
-    </div>
+<div className="tools-marquee">
+  <img
+    src={aboutMeTools}
+    alt="aboutMeTools"
+    className="tools-item mx-3"
+    draggable="false"
+  />
+  <img
+    src={aboutMeTools}
+    alt="aboutMeTools"
+    className="tools-item mx-3"
+    draggable="false"
+  />
+</div>
+    </section>
   );
 }
 

@@ -160,3 +160,29 @@ li {
 .scroll-left:hover {
   animation-play-state: paused;
 }
+
+/* AboutMeTools moving CSS */
+/* ===== CONTINUOUS TOOLS MARQUEE ===== */
+/* ===== CONTINUOUS TOOLS MARQUEE (NO GAPS) ===== */
+
+.tools-marquee {
+  display: flex;
+  width: 200vw;              /* 2 × 100vw */
+  animation: toolsScroll 30s linear infinite;
+  will-change: transform;
+}
+
+.tools-item {
+  width: 100vw;
+  flex-shrink: 0;
+  padding: 6rem 0;
+}
+
+@keyframes toolsScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* ⬅️ ONLY HALF */
+  }
+}
