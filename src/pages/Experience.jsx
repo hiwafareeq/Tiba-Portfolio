@@ -20,7 +20,7 @@ const experiences = [
     organization: "Women In Tech",
     type: "Intern",
     period: "2025",
-    image: {WomenInTech},
+    image: WomenInTech,
     points: [
       "Built analytical dashboards for environmental and program datasets using Power BI",
       "Performed data cleaning and analysis using Python (Polars) for efficient data processing",
@@ -32,7 +32,7 @@ const experiences = [
     organization: "She Codes Too",
     type: "Intern",
     period: "2023",
-    image: {SheCodesToo},
+    image: SheCodesToo,
     points: [
       "Completed She Codes – Data Analysis program using Python (NumPy & Pandas)",
       "Performed data cleaning, manipulation, and exploratory analysis on datasets",
@@ -44,7 +44,7 @@ const experiences = [
     organization: "Turning College",
     type: "Intern",
     period: "2024 – 2025",
-    image: {TurningCollege},
+    image: TurningCollege,
     points: [
       "Completed Digital Explorers II – Data Analytics program with Turing College",
       "Applied Excel, SQL, and Power BI to analyze data and build dashboards",
@@ -56,7 +56,7 @@ const experiences = [
     organization: "Digital Explorers",
     type: "Intern",
     period: "2024 - 2025",
-    image: {DigitalExplorers},
+    image: DigitalExplorers,
     points: [
       "Highly competitive, skills-based data analytics program",
       "Completed practical assessments and real-world analytics tasks under time constraints",
@@ -68,7 +68,7 @@ const experiences = [
     organization: "GrowthLine",
     type: "Employee",
     period: "2024",
-    image: {GrowthLine},
+    image: GrowthLine,
     points: [
       "Managed project scope, milestones, and team coordination",
       "Assisted in implementing project activities in line with approved work plans",
@@ -80,7 +80,7 @@ const experiences = [
     organization: "Injah",
     type: "TOT",
     period: "2025",
-    image: {Injah},
+    image: Injah,
     points: [
       "Completed Training of Trainers (ToT) program",
       "Gained skills in training delivery and facilitation",
@@ -92,7 +92,7 @@ const experiences = [
     organization: "TIEC",
     type: "Program",
     period: "2024",
-    image: {TIEC},
+    image: TIEC,
     points: [
       "Completed the Virtual Exchange Program with Texas International Education Consortium (TIEC)",
       "Gained insights into the U.S. economy, entrepreneurship, and startup development",
@@ -104,7 +104,7 @@ const experiences = [
     organization: "AUIS",
     type: "Program",
     period: "2024",
-    image: {AUIS},
+    image: AUIS,
     points: [
       "Participated in an idea pitching competition, developing a business concept",
       "Contributed to profit estimation and marketing strategy planning",
@@ -116,7 +116,7 @@ const experiences = [
     organization: "TLTD TryMe",
     type: "Intern",
     period: "2024",
-    image: {TryMe},
+    image: TryMe,
     points: [
       "Completed TryMe2024, a free online internship focused on career readiness",
       "Enhanced professional skills through practical tasks and guided support",
