@@ -36,7 +36,7 @@ const dataSkills = [
 const programmingSkills = [
   { name: "JavaScript", icon: SiJavascript },
   { name: "React", icon: SiReact },
-  { name: "Node.js", icon: SiNodedotjs },
+  { name: "Node", icon: SiNodedotjs },
   { name: "Java", icon: FaJava },
   { name: "Python", icon: FaPython },
   { name: "Git/Bash", icon: SiGit },
@@ -61,8 +61,8 @@ const designSkills = [
 
 function SkillBlock({ title, skills }) {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-wrap gap-4 border max-w-[30vw] border-white/20 p-6 rounded-xl backdrop-blur-lg">
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-wrap gap-2 border max-w-[30vw] border-white/20 p-6 rounded-xl backdrop-blur-lg">
         <h2 className="text-white text-2xl font-semibold tracking-wide w-full mb-2">
           {title}
         </h2>
@@ -82,7 +82,7 @@ function SkillBlock({ title, skills }) {
               hover:shadow-[0_0_24px_rgba(255,255,255,0.35)]
             "
           >
-            <Icon className="text-lg opacity-80 group-hover:opacity-100 transition" />
+            <Icon className="text-2xl opacity-80 group-hover:opacity-100 transition" />
             {name}
           </span>
         ))}

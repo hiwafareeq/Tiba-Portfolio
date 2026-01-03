@@ -56,13 +56,13 @@ function InfoPage() {
       <div className="flex flex-col items-center py-5 px-6 gap-6">
 
         {/* ROW 1 — TEXT */}
-        <div className="flex gap-8 justify-center w-full">
+        <div className="flex gap-8 justify-between w-[75vw]">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="w-[30vw] min-w-[280px] text-black text-lg leading-relaxed"
+            className="w-[35vw] min-w-[30] text-black text-xl leading-relaxed"
           >
             Creating meaningful impact by transforming data into clear, concise,
             and accurate analysis. Supporting informed decision making.
@@ -73,7 +73,7 @@ function InfoPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="w-[30vw] min-w-[280px] text-black text-md leading-relaxed"
+            className="w-[35vw] min-w-[280px] text-black text-lg leading-relaxed"
           >
             Everything I do starts with understanding the goal, clarifying intent,
             and focusing on what truly matters, allowing me to create work that is
@@ -82,18 +82,18 @@ function InfoPage() {
         </div>
 
         {/* ROW 2 — HR + STATS */}
-        <div className="flex gap-8 justify-center w-full">
-          <div className="w-[30vw] min-w-[280px]">
+        <div className="flex gap-8 justify-between w-[75vw] mt-10">
+          <div className="w-[35vw] min-w-[280px]">
             <hr className="border-gray-300 mb-4" />
-            <h1 className="text-4xl font-bold text-gray-900 mb-1">
+            <h1 className="text-8xl font-bold text-gray-900 mb-1">
               <CountUp to={3} />+
             </h1>
             <p className="text-black font-medium">Years of experience</p>
           </div>
 
-          <div className="w-[30vw] min-w-[280px]">
+          <div className="w-[35vw] min-w-[280px]">
             <hr className="border-gray-300 mb-4" />
-            <h1 className="text-4xl font-bold text-gray-900 mb-1">
+            <h1 className="text-8xl font-bold text-gray-900 mb-1">
               <CountUp to={15} />+
             </h1>
             <p className="text-black font-medium">Projects Complete</p>

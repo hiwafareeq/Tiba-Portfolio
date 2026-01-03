@@ -4,3 +4,25 @@ body {
   padding: 0;
   background-color: black;
 }
+:root {
+  --font-heading: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "Rubik", system-ui, -apple-system, sans-serif;
+  --font-arabic: "Noto Kufi Arabic", system-ui, sans-serif;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+.heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Body text */
+body,
+p,
+span,
+li {
+  font-family: var(--font-body);
+}
