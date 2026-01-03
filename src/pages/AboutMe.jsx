@@ -71,6 +71,7 @@ function AboutMe() {
 
   return (
     <section
+      id="about-me"
       ref={sectionRef}
       className="text-center pt-20 mx-10 text-white bg-black overflow-hidden"
     >

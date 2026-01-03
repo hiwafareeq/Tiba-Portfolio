@@ -5,7 +5,7 @@ function LandingPage() {
   return (
     <>
       {/* HERO SECTION */}
-      <div className="flex items-center justify-between mt-10">
+      <div id="home" className="flex items-center justify-between mt-10">
         
         {/* LEFT SOCIALS */}
         <div className="flex-col justify-center items-center gap-5 mx-15">

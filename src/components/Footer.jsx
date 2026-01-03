@@ -196,6 +196,7 @@ function Footer() {
   return (
     <>
       <footer
+        id="contact"
         className="
           relative min-h-[30vh]
           bg-black

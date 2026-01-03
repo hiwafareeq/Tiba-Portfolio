@@ -1,14 +1,14 @@
-import './App.css'
-import Navbar from './components/navbar'
-import LandingPage from './pages/LandingPage'
-import AboutMe from './pages/AboutMe'
-import InfoPage from './pages/InfoPage'
-import Skills from './pages/Skills'
-import Experiences from './pages/Experience'
-import Footer from './components/Footer'
-import Label from "./components/ScrollingXLabels"
-import Lenis from '@studio-freight/lenis'
-import { useEffect } from 'react'
+import "./App.css";
+import Navbar from "./components/navbar";
+import LandingPage from "./pages/LandingPage";
+import AboutMe from "./pages/AboutMe";
+import InfoPage from "./pages/InfoPage";
+import Skills from "./pages/Skills";
+import Experiences from "./pages/Experience";
+import Footer from "./components/Footer";
+import Label from "./components/ScrollingXLabels";
+import Lenis from "@studio-freight/lenis";
+import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
@@ -18,16 +18,22 @@ function App() {
       smoothWheel: true,
       smoothTouch: false,
       touchMultiplier: 2,
-      infinite: false,
-    })
+    });
+
+    window.lenis = lenis; // 🔴 expose globally
 
     function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
-  }, [])
+    requestAnimationFrame(raf);
+
+    return () => {
+      window.lenis = null;
+    };
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -39,7 +45,7 @@ function App() {
       <Label />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -97,7 +97,7 @@ function SkillBlock({ title, skills }) {
 
 function Skills() {
   return (
-    <section className="px-6 py-16 flex flex-col gap-14">
+    <section id="skills" className="px-6 py-16 flex flex-col gap-14">
       <h1 className="ml-4 text-white text-5xl md:text-6xl font-semibold">
         Skills
       </h1>

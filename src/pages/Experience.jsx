@@ -1,3 +1,13 @@
+import WomenInTech from "../assets/images/WomenInTech.svg";
+import SheCodesToo from "../assets/images/SheCodesToo.svg";
+import TurningCollege from "../assets/images/TurningCollege.svg";
+import DigitalExplorers from "../assets/images/DigitalExplorers.svg";
+import GrowthLine from "../assets/images/GrowthLine.svg";
+import Injah from "../assets/images/injah.svg";
+import TIEC from "../assets/images/TIEC.svg";
+import AUIS from "../assets/images/AUIS.svg";
+import TryMe from "../assets/images/TryMe.svg";
+
 // this page contains the data and components for the Experience section
 
 /* =========================
@@ -10,7 +20,7 @@ const experiences = [
     organization: "Women In Tech",
     type: "Intern",
     period: "2025",
-    image: "./src/assets/images/WomenInTech.svg",
+    image: {WomenInTech},
     points: [
       "Built analytical dashboards for environmental and program datasets using Power BI",
       "Performed data cleaning and analysis using Python (Polars) for efficient data processing",
@@ -22,7 +32,7 @@ const experiences = [
     organization: "She Codes Too",
     type: "Intern",
     period: "2023",
-    image: "./src/assets/images/SheCodesToo.svg",
+    image: {SheCodesToo},
     points: [
       "Completed She Codes – Data Analysis program using Python (NumPy & Pandas)",
       "Performed data cleaning, manipulation, and exploratory analysis on datasets",
@@ -34,7 +44,7 @@ const experiences = [
     organization: "Turning College",
     type: "Intern",
     period: "2024 – 2025",
-    image: "./src/assets/images/TurningCollege.svg",
+    image: {TurningCollege},
     points: [
       "Completed Digital Explorers II – Data Analytics program with Turing College",
       "Applied Excel, SQL, and Power BI to analyze data and build dashboards",
@@ -46,7 +56,7 @@ const experiences = [
     organization: "Digital Explorers",
     type: "Intern",
     period: "2024 - 2025",
-    image: "./src/assets/images/DigitalExplorers.svg",
+    image: {DigitalExplorers},
     points: [
       "Highly competitive, skills-based data analytics program",
       "Completed practical assessments and real-world analytics tasks under time constraints",
@@ -58,7 +68,7 @@ const experiences = [
     organization: "GrowthLine",
     type: "Employee",
     period: "2024",
-    image: "./src/assets/images/GrowthLine.svg",
+    image: {GrowthLine},
     points: [
       "Managed project scope, milestones, and team coordination",
       "Assisted in implementing project activities in line with approved work plans",
@@ -70,7 +80,7 @@ const experiences = [
     organization: "Injah",
     type: "TOT",
     period: "2025",
-    image: "./src/assets/images/injah.svg",
+    image: {Injah},
     points: [
       "Completed Training of Trainers (ToT) program",
       "Gained skills in training delivery and facilitation",
@@ -82,7 +92,7 @@ const experiences = [
     organization: "TIEC",
     type: "Program",
     period: "2024",
-    image: "./src/assets/images/TIEC.svg",
+    image: {TIEC},
     points: [
       "Completed the Virtual Exchange Program with Texas International Education Consortium (TIEC)",
       "Gained insights into the U.S. economy, entrepreneurship, and startup development",
@@ -94,7 +104,7 @@ const experiences = [
     organization: "AUIS",
     type: "Program",
     period: "2024",
-    image: "./src/assets/images/AUIS.svg",
+    image: {AUIS},
     points: [
       "Participated in an idea pitching competition, developing a business concept",
       "Contributed to profit estimation and marketing strategy planning",
@@ -106,7 +116,7 @@ const experiences = [
     organization: "TLTD TryMe",
     type: "Intern",
     period: "2024",
-    image: "./src/assets/images/TryMe.svg",
+    image: {TryMe},
     points: [
       "Completed TryMe2024, a free online internship focused on career readiness",
       "Enhanced professional skills through practical tasks and guided support",
@@ -206,7 +216,7 @@ function ExperienceCard({
 
 function Experiences() {
   return (
-    <section className="px-6 py-20 flex flex-col gap-14">
+    <section id="experience" className="px-6 py-20 flex flex-col gap-14">
       <h1 className="ml-4 text-white text-5xl md:text-6xl font-semibold">
         Experience
       </h1>
