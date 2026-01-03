@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './components/navbar'
 import LandingPage from './pages/LandingPage'
 import AboutMe from './pages/AboutMe'
+import InfoPage from './pages/InfoPage'
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from 'react'
 
@@ -28,6 +29,7 @@ function App() {
       <Navbar />
       <LandingPage />
       <AboutMe />
+      <InfoPage />
     </div>
   )
 }
