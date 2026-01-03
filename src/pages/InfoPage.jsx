@@ -82,7 +82,7 @@ function InfoPage() {
         </div>
 
         {/* ROW 2 — HR + STATS */}
-        <div className="flex gap-8 justify-between w-[75vw] mt-10">
+        <div className="flex gap-8 justify-between w-[75vw] mt-10 py-10">
           <div className="w-[35vw] min-w-[280px]">
             <hr className="border-gray-300 mb-4" />
             <h1 className="text-8xl font-bold text-gray-900 mb-1">

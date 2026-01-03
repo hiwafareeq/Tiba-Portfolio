@@ -1,9 +1,17 @@
 @import "tailwindcss";
+
+/* =========================
+   BASE RESET
+========================= */
 body {
   margin: 0;
   padding: 0;
   background-color: black;
 }
+
+/* =========================
+   FONT SYSTEM
+========================= */
 :root {
   --font-heading: "Space Grotesk", system-ui, -apple-system, sans-serif;
   --font-body: "Rubik", system-ui, -apple-system, sans-serif;
@@ -25,4 +33,61 @@ p,
 span,
 li {
   font-family: var(--font-body);
+}
+
+/* Arabic text */
+[lang="ar"],
+.arabic {
+  font-family: var(--font-arabic);
+  direction: rtl;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+/* Fade up (hero text) */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* Scroll hint */
+@keyframes scrollHint {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.animate-scrollHint {
+  animation: scrollHint 2.5s ease-in-out infinite;
 }
