@@ -30,10 +30,8 @@ function Footer() {
       "
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-
         {/* LEFT SIDE */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-sm">
-
           {/* LINKS */}
           <div>
             <p className="text-white/40 mb-4 uppercase tracking-widest text-xs">
@@ -104,17 +102,18 @@ function Footer() {
       {/* BIG EDITORIAL NAME */}
       <p
         className="
-          absolute bottom-0 inset-x-0
-          text-[30vw]
-          leading-none
-          font-light
-          tracking-tight
-          text-white/90
-          text-center
-          pointer-events-none
-          select-none
-          mix-blend-screen
-          translate-y-1/6
+            absolute bottom-0 inset-x-0
+            text-[30vw]
+            leading-none
+            font-light
+            tracking-tight
+            text-transparent
+            text-center
+            pointer-events-none
+            select-none
+            mix-blend-screen
+            translate-y-1/6
+            [-webkit-text-stroke:1.5px_rgba(255,255,255,0.2)]
         "
       >
         TIBA

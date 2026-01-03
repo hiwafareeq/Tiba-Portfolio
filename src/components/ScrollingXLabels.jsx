@@ -10,7 +10,7 @@ function ScrollingXLabels() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-screen h-[100vh] overflow-visible"
+      className="relative w-screen h-[100vh] overflow-visible my-20"
     >
       {/* WHITE STRIP */}
       <div className="absolute inset-0 flex items-center justify-center rotate-12">
