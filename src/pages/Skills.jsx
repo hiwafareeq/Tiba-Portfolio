@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 import { PiMicrosoftPowerpointLogoFill } from "react-icons/pi";
 import { TbSql } from "react-icons/tb";
-import { FaPython, FaJava, FaDatabase  } from "react-icons/fa";
+import { FaPython, FaJava, FaDatabase } from "react-icons/fa";
 import { MdAnalytics, MdTableChart, MdDesignServices } from "react-icons/md";
 
 /* =========================
@@ -98,7 +98,9 @@ function SkillBlock({ title, skills }) {
 function Skills() {
   return (
     <section className="px-6 py-16 flex flex-col gap-14">
-      <h1 className="ml-4 text-white text-5xl md:text-6xl font-semibold">Skills</h1>
+      <h1 className="ml-4 text-white text-5xl md:text-6xl font-semibold">
+        Skills
+      </h1>
       <div className="flex gap-10 mx-auto flex-wrap justify-center">
         <SkillBlock title="Data Analytics" skills={dataSkills} />
         <SkillBlock title="Programming" skills={programmingSkills} />

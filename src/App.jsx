@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage'
 import AboutMe from './pages/AboutMe'
 import InfoPage from './pages/InfoPage'
 import Skills from './pages/Skills'
+import Experiences from './pages/Experience'
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from 'react'
 
@@ -32,6 +33,7 @@ function App() {
       <AboutMe />
       <InfoPage />
       <Skills />
+      <Experiences />
     </div>
   )
 }
