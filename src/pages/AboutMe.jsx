@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import useTypewriter from "../hooks/useTypewriter.jsx";
-import aboutMeTools from "../assets/images/aboutMeTools.svg";
+import aboutMeTools from "../assets/images/AboutMeTools.svg";
 
 function AboutMe() {
   const sectionRef = useRef(null);
