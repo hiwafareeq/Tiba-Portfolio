@@ -6,7 +6,7 @@ import {
   useInView,
   animate,
 } from "framer-motion";
-import Tiba from "../assets/images/Tiba.avif";
+import Tiba from "../assets/images/Tiba.jpg";
 
 /* ---------- CountUp Component ---------- */
 function CountUp({ to }) {
@@ -40,7 +40,7 @@ function InfoPage() {
     offset: ["start end", "end center"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   return (
     <div className="bg-white" ref={ref}>
@@ -53,7 +53,7 @@ function InfoPage() {
       />
 
       {/* CONTENT */}
-      <div className="flex flex-col items-center py-10 px-6 gap-6">
+      <div className="flex flex-col items-center py-5 px-6 gap-6">
 
         {/* ROW 1 — TEXT */}
         <div className="flex gap-8 justify-center w-full">

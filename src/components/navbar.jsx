@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-20">
       <div className="flex justify-between items-center p-8
-        bg-gradient-to-b from-black/80 to-black/0
+        bg-gradient-to-b from-black/80 to-black/npm0
       ">
         <img src={Logo} alt="Logo" className="w-19 h-13" />
 
