@@ -64,53 +64,60 @@ function ScrollingXLabels() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-screen h-screen overflow-hidden my-20"
-    >
-      {/* WHITE STRIP */}
-      <div className="absolute inset-0 flex items-center justify-center rotate-12">
-        <div className="x-strip white-strip">
-          <div ref={strip1Ref} className="x-logos">
-            {[...logos, ...logos].map((_, i) => (
-              <div key={i} className="x-item">
-                <img
-                  src={TibaLogo}
-                  alt="Tiba Logo"
-                  className="x-logo"
-                  draggable="false"
-                />
-                <span className="x-separator text-white">
-                  Data Analyst • Software Engineer
-                </span>
-              </div>
-            ))}
-          </div>
+  <section
+    ref={sectionRef}
+    className="
+    hidden
+    lg:block
+    relative w-screen h-screen
+    overflow-hidden
+    my-20
+    "
+  >
+    {/* WHITE STRIP */}
+    <div className="absolute inset-0 flex items-center justify-center rotate-6 sm:rotate-12">
+      <div className="x-strip white-strip">
+        <div ref={strip1Ref} className="x-logos">
+          {[...logos, ...logos].map((_, i) => (
+            <div key={i} className="x-item">
+              <img
+                src={TibaLogo}
+                alt="Tiba Logo"
+                className="x-logo"
+                draggable="false"
+              />
+              <span className="x-separator text-white">
+                Data Analyst • Software Engineer
+              </span>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
 
-      {/* BLACK STRIP */}
-      <div className="absolute inset-0 flex items-center justify-center -rotate-12">
-        <div className="x-strip black-strip">
-          <div ref={strip2Ref} className="x-logos">
-            {[...logos, ...logos].map((_, i) => (
-              <div key={i} className="x-item">
-                <img
-                  src={TibaLogo}
-                  alt="Tiba Logo"
-                  className="x-logo"
-                  draggable="false"
-                />
-                <span className="x-separator text-black">
-                  Data Analyst • Software Engineer
-                </span>
-              </div>
-            ))}
-          </div>
+    {/* BLACK STRIP */}
+    <div className="absolute inset-0 flex items-center justify-center -rotate-6 sm:-rotate-12">
+      <div className="x-strip black-strip">
+        <div ref={strip2Ref} className="x-logos">
+          {[...logos, ...logos].map((_, i) => (
+            <div key={i} className="x-item">
+              <img
+                src={TibaLogo}
+                alt="Tiba Logo"
+                className="x-logo"
+                draggable="false"
+              />
+              <span className="x-separator text-black">
+                Data Analyst • Software Engineer
+              </span>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
+
 }
 
 export default ScrollingXLabels;

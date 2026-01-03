@@ -8,10 +8,10 @@ function ContactModal({ open, onClose }) {
     name: "",
     email: "",
     message: "",
-    website: "", // honeypot
+    website: "",
   });
 
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -38,10 +38,7 @@ function ContactModal({ open, onClose }) {
       });
 
       const data = await res.json();
-
-      if (!data.success) {
-        throw new Error(data.error || "Something went wrong");
-      }
+      if (!data.success) throw new Error(data.error || "Something went wrong");
 
       setStatus("success");
       setForm({ name: "", email: "", message: "", website: "" });
@@ -52,7 +49,7 @@ function ContactModal({ open, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
       {/* BACKDROP */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
@@ -64,28 +61,37 @@ function ContactModal({ open, onClose }) {
         onClick={(e) => e.stopPropagation()}
         className="
           relative
-          bg-black
-          text-white
+          bg-black text-white
           border border-white/20
           rounded-2xl
-          w-[90%]
-          max-w-md
-          p-8
+          w-full max-w-md
+          p-6 sm:p-8
+          max-h-[90vh]
+          overflow-y-auto
           animate-fadeUp
         "
       >
         {/* CLOSE */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white/60 hover:text-white"
+          className="
+            absolute top-4 right-4
+            w-8 h-8
+            flex items-center justify-center
+            rounded-full
+            text-white/60
+            hover:text-white hover:bg-white/10
+          "
         >
           ✕
         </button>
 
         {status === "success" ? (
           <div className="text-center space-y-4">
-            <h2 className="text-2xl font-semibold">Message Sent 🎉</h2>
-            <p className="text-white/70">
+            <h2 className="text-xl sm:text-2xl font-semibold">
+              Message Sent 🎉
+            </h2>
+            <p className="text-white/70 text-sm sm:text-base">
               Thanks for reaching out. I’ll get back to you shortly.
             </p>
             <button
@@ -97,10 +103,12 @@ function ContactModal({ open, onClose }) {
           </div>
         ) : (
           <>
-            <h2 className="text-2xl font-semibold mb-6">Contact Me</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-6">
+              Contact Me
+            </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Honeypot (hidden spam trap) */}
+              {/* Honeypot */}
               <input
                 type="text"
                 name="website"
@@ -149,12 +157,9 @@ function ContactModal({ open, onClose }) {
                 type="submit"
                 disabled={status === "loading"}
                 className="
-                  w-full
-                  mt-4
-                  py-3
+                  w-full mt-4 py-3
                   rounded-full
-                  bg-white
-                  text-black
+                  bg-white text-black
                   font-medium
                   transition
                   disabled:opacity-50
@@ -198,18 +203,19 @@ function Footer() {
       <footer
         id="contact"
         className="
-          relative min-h-[30vh]
-          bg-black
-          text-white
-          px-8 pt-14 pb-[30vw]
+          relative
+          bg-black text-white
+          px-6 sm:px-8
+          pt-14
+          pb-[40vw] sm:pb-[28vw] lg:pb-[22vw]
           overflow-hidden
-          mt-50
+          mt-32
         "
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* LEFT SIDE */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-sm">
-            {/* LINKS */}
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* LEFT */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 text-sm">
             <div>
               <p className="text-white/40 mb-4 uppercase tracking-widest text-xs">
                 Links
@@ -222,7 +228,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* SOCIALS */}
             <div>
               <p className="text-white/40 mb-4 uppercase tracking-widest text-xs">
                 Socials
@@ -235,7 +240,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* LOCAL TIME */}
             <div>
               <p className="text-white/40 mb-4 uppercase tracking-widest text-xs">
                 Local Time
@@ -245,7 +249,6 @@ function Footer() {
               </p>
             </div>
 
-            {/* VERSION */}
             <div>
               <p className="text-white/40 mb-4 uppercase tracking-widest text-xs">
                 Version
@@ -255,30 +258,51 @@ function Footer() {
               </p>
             </div>
           </div>
-
-          {/* RIGHT SIDE */}
-          <div className="flex flex-col items-start lg:items-end justify-between gap-8">
+            {/* MOBILE FLOATING CTA */}
             <button
               onClick={() => setOpen(true)}
               className="
-                px-6 py-3
+                lg:hidden
+                right-4
+                bottom-24
+                px-5 py-3
                 rounded-full
                 border border-white/30
+                bg-black/80
+                backdrop-blur
                 text-sm
+                text-white
+                shadow-lg
                 transition
                 hover:bg-white hover:text-black
               "
+            >
+              Email
+            </button>
+
+          {/* DESKTOP CTA */}
+          <div className="hidden lg:flex flex-col items-end justify-between">
+            <button
+              onClick={() => setOpen(true)}
+              className="
+              px-6 py-3
+              rounded-full
+              border border-white/30
+              text-sm
+                transition
+                hover:bg-white hover:text-black
+                "
             >
               contact@yourdomain.com
             </button>
           </div>
         </div>
 
-        {/* BIG EDITORIAL NAME */}
+        {/* EDITORIAL TEXT */}
         <p
           className="
             absolute bottom-0 inset-x-0
-            text-[30vw]
+            text-[38vw] sm:text-[26vw] lg:text-[18vw]
             leading-none
             font-light
             tracking-tight
@@ -286,8 +310,7 @@ function Footer() {
             text-center
             pointer-events-none
             select-none
-            mix-blend-screen
-            translate-y-1/6
+            z-0
             [-webkit-text-stroke:1.5px_rgba(255,255,255,0.2)]
           "
         >
@@ -295,7 +318,7 @@ function Footer() {
         </p>
       </footer>
 
-      {/* CONTACT POPUP */}
+
       <ContactModal open={open} onClose={() => setOpen(false)} />
     </>
   );

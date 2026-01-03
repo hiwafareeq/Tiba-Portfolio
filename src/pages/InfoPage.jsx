@@ -40,29 +40,43 @@ function InfoPage() {
     offset: ["start end", "end center"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
 
   return (
-    <div id="info" className="bg-white" ref={ref}>
+    <section id="info" ref={ref} className="bg-white overflow-hidden">
       {/* IMAGE */}
       <motion.img
         src={Tiba}
         alt="Tiba"
-        className="w-250 mx-auto py-5"
+        className="
+          w-full max-w-xl lg:max-w-4xl
+          mx-auto
+          py-10
+        "
         style={{ scale, transformOrigin: "bottom center" }}
       />
 
       {/* CONTENT */}
-      <div className="flex flex-col items-center py-5 px-6 gap-6">
-
+      <div className="flex flex-col items-center px-6 sm:px-10 gap-10">
         {/* ROW 1 — TEXT */}
-        <div className="flex gap-8 justify-between w-[75vw]">
+        <div
+          className="
+            flex flex-col lg:flex-row
+            gap-10
+            w-full max-w-6xl
+          "
+        >
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="w-[35vw] min-w-[30] text-black text-xl leading-relaxed"
+            className="
+              flex-1
+              text-black
+              text-base sm:text-lg lg:text-xl
+              leading-relaxed
+            "
           >
             Creating meaningful impact by transforming data into clear, concise,
             and accurate analysis. Supporting informed decision making.
@@ -73,7 +87,12 @@ function InfoPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="w-[35vw] min-w-[280px] text-black text-lg leading-relaxed"
+            className="
+              flex-1
+              text-black
+              text-base sm:text-lg
+              leading-relaxed
+            "
           >
             Everything I do starts with understanding the goal, clarifying intent,
             and focusing on what truly matters, allowing me to create work that is
@@ -81,27 +100,39 @@ function InfoPage() {
           </motion.p>
         </div>
 
-        {/* ROW 2 — HR + STATS */}
-        <div className="flex gap-8 justify-between w-[75vw] mt-10 py-10">
-          <div className="w-[35vw] min-w-[280px]">
+        {/* ROW 2 — STATS */}
+        <div
+          className="
+            flex flex-col lg:flex-row
+            gap-12
+            w-full max-w-6xl
+            py-10
+          "
+        >
+          {/* STAT 1 */}
+          <div className="flex-1">
             <hr className="border-gray-300 mb-4" />
-            <h1 className="text-8xl font-bold text-gray-900 mb-1">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-gray-900 mb-1">
               <CountUp to={3} />+
             </h1>
-            <p className="text-black font-medium">Years of experience</p>
+            <p className="text-black font-medium">
+              Years of experience
+            </p>
           </div>
 
-          <div className="w-[35vw] min-w-[280px]">
+          {/* STAT 2 */}
+          <div className="flex-1">
             <hr className="border-gray-300 mb-4" />
-            <h1 className="text-8xl font-bold text-gray-900 mb-1">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-gray-900 mb-1">
               <CountUp to={15} />+
             </h1>
-            <p className="text-black font-medium">Projects Complete</p>
+            <p className="text-black font-medium">
+              Projects Completed
+            </p>
           </div>
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -8,8 +8,6 @@ import TIEC from "../assets/images/TIEC.svg";
 import AUIS from "../assets/images/AUIS.svg";
 import TryMe from "../assets/images/TryMe.svg";
 
-// this page contains the data and components for the Experience section
-
 /* =========================
    DATA BLOCK
 ========================= */
@@ -142,7 +140,7 @@ function ExperienceCard({
       className="
         group
         flex flex-col
-        w-[30vw]
+        w-full
         border border-white/20
         rounded-xl
         bg-white/5
@@ -155,12 +153,12 @@ function ExperienceCard({
     >
       {/* LOGO */}
       <div className="w-full flex justify-center items-center py-6">
-        <div className="w-32 h-32 flex items-center justify-center">
+        <div className="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
           <img
             src={image}
             alt={organization}
             className="
-              max-w-[200%]
+              max-w-full
               max-h-full
               object-contain
               transition-transform duration-500
@@ -171,11 +169,11 @@ function ExperienceCard({
       </div>
 
       {/* CONTENT */}
-      <div className="p-6 flex flex-col gap-4 text-white">
+      <div className="p-5 sm:p-6 flex flex-col gap-4 text-white">
         {/* TITLE + TYPE */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-lg font-semibold leading-snug">
+            <h3 className="text-base sm:text-lg font-semibold leading-snug">
               {title}
             </h3>
             <p className="text-white/70 text-sm">
@@ -191,8 +189,7 @@ function ExperienceCard({
               rounded-full
               border border-white/30
               text-white/80
-              bg-white/5
-              backdrop-blur
+              bg-black
             "
           >
             {type}
@@ -216,12 +213,30 @@ function ExperienceCard({
 
 function Experiences() {
   return (
-    <section id="experience" className="px-6 py-20 flex flex-col gap-14">
-      <h1 className="ml-4 text-white text-5xl md:text-6xl font-semibold">
+    <section
+      id="experience"
+      className="
+        px-6 sm:px-10
+        py-20
+        flex flex-col gap-16
+      "
+    >
+      <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-semibold text-center sm:text-left">
         Experience
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-10">
+      {/* GRID LAYOUT */}
+      <div
+        className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-10
+          max-w-7xl
+          mx-auto
+        "
+      >
         {experiences.map((exp, index) => (
           <ExperienceCard key={index} {...exp} />
         ))}

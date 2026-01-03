@@ -188,3 +188,29 @@ li {
     transform: translateX(-50%); /* ⬅️ ONLY HALF */
   }
 }
+/* =========================
+   SCROLL HINT ANIMATION
+========================= */
+
+@keyframes scrollHint {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.animate-scrollHint {
+  animation: scrollHint 2.2s ease-in-out infinite;
+}

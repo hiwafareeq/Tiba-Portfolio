@@ -37,9 +37,7 @@ function AboutMe() {
       const delta = currentScrollY - lastScrollY;
       lastScrollY = currentScrollY;
 
-      // Move LEFT on scroll down
       offsetX -= delta * 0.4;
-
       toolsRef.current.style.transform = `translateX(${offsetX}px)`;
     };
 
@@ -52,14 +50,10 @@ function AboutMe() {
           isActive = false;
         }
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -73,30 +67,58 @@ function AboutMe() {
     <section
       id="about-me"
       ref={sectionRef}
-      className="text-center pt-20 mx-10 text-white bg-black overflow-hidden"
+      className="
+        text-center
+        pt-20
+        px-6 sm:px-10
+        text-white
+        bg-black
+        overflow-hidden
+      "
     >
-      <p className="text-2xl max-w-[70vw] mx-auto mt-10 min-h-[5rem]">
+      {/* MAIN TEXT */}
+      <p
+        className="
+          text-lg sm:text-xl lg:text-2xl
+          max-w-full sm:max-w-[70vw]
+          mx-auto
+          mt-10
+          min-h-[5rem]
+        "
+      >
         {first.text}
       </p>
 
-      <p className="text-lg max-w-[75vw] mx-auto mt-5 min-h-[3rem]">
+      <p
+        className="
+          text-base sm:text-lg
+          max-w-full sm:max-w-[75vw]
+          mx-auto
+          mt-5
+          min-h-[3rem]
+        "
+      >
         {second.text}
       </p>
 
-<div className="tools-marquee">
-  <img
-    src={aboutMeTools}
-    alt="aboutMeTools"
-    className="tools-item mx-3"
-    draggable="false"
-  />
-  <img
-    src={aboutMeTools}
-    alt="aboutMeTools"
-    className="tools-item mx-3"
-    draggable="false"
-  />
-</div>
+      {/* TOOLS MARQUEE — DESKTOP ONLY */}
+      <div
+        ref={toolsRef}
+        className="hidden lg:flex tools-marquee mt-16"
+      >
+        <img
+          src={aboutMeTools}
+          alt="About me tools"
+          className="tools-item mx-3"
+          draggable="false"
+        />
+        <img
+          src={aboutMeTools}
+          alt="About me tools"
+          className="tools-item mx-3"
+          draggable="false"
+        />
+      </div>
     </section>
   );
 }
