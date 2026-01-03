@@ -12,7 +12,7 @@ function LandingPage() {
             </div>
             <div className="flex flex-col items-center justify-center gap-5">
                 <h2 className="text-white text-2xl font-bold">Hi, I'm Tiba</h2>
-                <h1 className="text-white text-4xl font-bold">Software Engineer & Data Analyst</h1>
+                <h1 className="text-white text-5xl font-bold">Software Engineer & Data Analyst</h1>
                 <div className="flex items-center justify-center gap-5">
                     <button className="bg-black border border-white text-white px-4 py-2 rounded-full hover:bg-white hover:text-black">Get My CV</button>
                     <button className="bg-black border border-white text-white px-4 py-2 rounded-full hover:bg-white hover:text-black">Contact Me</button>
