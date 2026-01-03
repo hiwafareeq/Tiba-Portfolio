@@ -5,6 +5,7 @@ import AboutMe from './pages/AboutMe'
 import InfoPage from './pages/InfoPage'
 import Skills from './pages/Skills'
 import Experiences from './pages/Experience'
+import Label from "./components/ScrollingXLabels"
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from 'react'
 
@@ -34,6 +35,7 @@ function App() {
       <InfoPage />
       <Skills />
       <Experiences />
+      <Label />
     </div>
   )
 }

@@ -6,7 +6,7 @@ import {
   useInView,
   animate,
 } from "framer-motion";
-import Tiba from "../assets/images/Tiba.jpg";
+import Tiba from "../assets/images/Osmos-Irakas-2024-geg-2 1.jpg";
 
 /* ---------- CountUp Component ---------- */
 function CountUp({ to }) {
