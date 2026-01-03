@@ -43,7 +43,7 @@ function InfoPage() {
   const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
 
   return (
-    <section id="info" ref={ref} className="bg-white overflow-hidden">
+    <section id="about" ref={ref} className="bg-white overflow-hidden">
       {/* IMAGE */}
       <motion.img
         src={Tiba}

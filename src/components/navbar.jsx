@@ -36,7 +36,8 @@ function Navbar() {
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex gap-7 ml-auto">
           <li onClick={() => scrollTo("#home")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Home</li>
-          <li onClick={() => scrollTo("#about-me")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">About</li>
+          <li onClick={() => scrollTo("#bio")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Bio</li>
+          <li onClick={() => scrollTo("#about")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">About</li>
           <li onClick={() => scrollTo("#skills")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Skills</li>
           <li onClick={() => scrollTo("#experience")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Experience</li>
           <li onClick={() => scrollTo("#contact")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Contact</li>
@@ -57,7 +58,8 @@ function Navbar() {
         <div className="md:hidden bg-black/90 backdrop-blur px-6 py-6">
           <ul className="flex flex-col gap-5 text-center">
             <li onClick={() => scrollTo("#home")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Home</li>
-            <li onClick={() => scrollTo("#about-me")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">About</li>
+            <li onClick={() => scrollTo("#bio")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Bio</li>
+            <li onClick={() => scrollTo("#about")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">About</li>
             <li onClick={() => scrollTo("#skills")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Skills</li>
             <li onClick={() => scrollTo("#experience")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Experience</li>
             <li onClick={() => scrollTo("#contact")} className="text-white text-lg cursor-pointer transition-opacity hover:opacity-80;">Contact</li>

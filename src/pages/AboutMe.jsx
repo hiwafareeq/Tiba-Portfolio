@@ -65,7 +65,7 @@ function AboutMe() {
 
   return (
     <section
-      id="about-me"
+      id="bio"
       ref={sectionRef}
       className="
         text-center
