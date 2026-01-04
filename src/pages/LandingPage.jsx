@@ -49,19 +49,21 @@ function LandingPage() {
               animate-fadeUp delay-300
             "
           >
-            <button
+            <a
+              href="./src/Tiba Jasim Cv.pdf"
+              download
               className="
-                bg-black border border-white text-white
-                px-6 py-3 rounded-full
-                transition-all duration-300 ease-out
-                hover:bg-white hover:text-black
-                hover:-translate-y-0.5
-                hover:shadow-[0_6px_20px_rgba(255,255,255,0.25)]
-              "
+              inline-block
+              bg-black border border-white text-white
+              px-6 py-3 rounded-full
+              transition-all duration-300 ease-out
+              hover:bg-white hover:text-black
+              hover:-translate-y-0.5
+              hover:shadow-[0_6px_20px_rgba(255,255,255,0.25)]
+            "
             >
-              Get My CV
-            </button>
-
+              Download CV
+            </a>
             <button
               className="
                 bg-black border border-white text-white
